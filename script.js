@@ -31,6 +31,12 @@ function displayBooks() {
     });
 }
 
+// Function to handle new book submission
+function handleFormSubmit(event){
+    event.preventDefault(); // prevent the form from submitting 
+
+}
+
 // Add some test data
 addBook('The Great Gatsby', 'F. Scott Fitzgerald', 180);
 addBook('To Kill a Mockingbird', 'Harper Lee', 281);
