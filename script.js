@@ -1,32 +1,36 @@
 let books = [];
 
-// add book to books storage
-function addBook(title,author){
+// Function to add a book to the books array
+function addBook(title, author, numberOfPages) {
     const book = {
         title: title,
-        author: author
-    }
+        author: author,
+        numberOfPages: numberOfPages
+    };
 
     books.push(book);
+    displayBooks(); // Update the display after adding a book
 }
 
-function displayBooks(){
+// Function to display books
+function displayBooks() {
     console.table(books);
 
     const booksList = document.getElementById('book-list');
-    booksList.inneHtml = '';
+    booksList.innerHTML = ''; // Clear previous list
 
-    books.forEach(book=>{
+    books.forEach(book => {
         const bookItem = document.createElement('div');
         bookItem.className = 'book-item';
-        bookItem.innerHTML = `<h3>${book.title}</h3><p>${book.author}</p>`;
+        bookItem.innerHTML = `
+            <h3>${book.title}</h3>
+            <p>${book.author}</p>
+            <small>Pages: ${book.numberOfPages}</small>
+        `;
         booksList.appendChild(bookItem);
     });
-
 }
 
-// add some test data 
-addBook('The Great Gatsby', 'F. Scott Fitzgerald');
-addBook('To Kill a Mockingbird', 'Harper Lee');
-
-displayBooks();
+// Add some test data
+addBook('The Great Gatsby', 'F. Scott Fitzgerald', 180);
+addBook('To Kill a Mockingbird', 'Harper Lee', 281);
