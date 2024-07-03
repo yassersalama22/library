@@ -12,6 +12,17 @@ function addBook(title,author){
 
 function displayBooks(){
     console.table(books);
+
+    const booksList = document.getElementById('book-list');
+    booksList.inneHtml = '';
+
+    books.forEach(book=>{
+        const bookItem = document.createElement('div');
+        bookItem.className = 'book-item';
+        bookItem.innerHTML = `<h3>${book.title}</h3><p>${book.author}</p>`;
+        booksList.appendChild(bookItem);
+    });
+
 }
 
 // add some test data 
