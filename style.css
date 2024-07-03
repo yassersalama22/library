@@ -25,3 +25,19 @@ dialog {
 dialog::backdrop {
     background-color: rgba(0, 0, 0, 0.4);
 }
+
+#new-book-form div {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+#new-book-form label {
+    flex: 1;
+    margin-right: 10px;
+}
+
+#new-book-form input {
+    flex: 2;
+}
